@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class SignIn extends Component {
     constructor() {
@@ -7,7 +6,8 @@ class SignIn extends Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            name: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -41,12 +41,17 @@ class SignIn extends Component {
                     </div>
 
                     <div className="FormField">
+                        <label className="FormField__Label" htmlFor="name">name</label>
+                        <input type="name" id="name" className="FormField__Input" placeholder="Enter your name" name="name" value={this.state.name} onChange={this.handleChange} />
+                    </div>
+
+                    <div className="FormField">
                         <label className="FormField__Label" htmlFor="password">Password</label>
                         <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
                     </div>
 
                     <div className="FormField">
-                        <button className="FormField__Button mr-20">Sign In</button> <Link to="/" className="FormField__Link">Create an account</Link>
+                        <button className="FormField__Button">Sign In</button>
                     </div>
                 </form>
             </div>
